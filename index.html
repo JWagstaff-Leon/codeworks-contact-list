@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://kit.fontawesome.com/9019f49ac5.js" crossorigin="anonymous"></script>
+        
+        <title>My Contact List</title>    
+        
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    
+    <body>
+        <div id="add-contact-button" class="add-button" onclick="openAddContactCard()">
+            <div class="add-icon d-flex">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        </div>
+       <header class="container">
+            <div class="card m3">
+                <h2 class="p2">My Contact List</h2>
+            </div>
+       </header>
+
+       <main class="container d-flex flex-vertical">
+            <div class="card p3 m3 hidden" id="add-contact-form" style="display: block;">
+                <h4>Add Contact</h4>
+                <form onSubmit="addContact(event)">
+                    <div class="form-div m2">
+                        <label for="contactName">Name:</label>
+                        <input type="text" name="contactName" value="" required>
+                    </div>
+
+                    <div class="form-div m2">
+                        <label for="phoneNumber">Number:</label>
+                        <input type="text" name="phoneNumber" value="" required>
+                        <span class="hidden invalid-phone-number" id="invalid-phone-number">Must be a 10 digit phone number</span>
+                    </div>
+
+                    <div class="form-div m2">
+                        <label for="emergency">Emergency Contact?</label>
+                        <input type="checkbox" name="emergency">
+                    </div>
+
+                    <div class="form-div m2">
+                        <button type="submit" class="submit-button">Add Contact</button>
+                        <button type="button" class="cancel-button" onclick="cancelAddContact()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="contact-list"></div>            
+        </main>
+        
+
+        <script src="app.js"></script>
+    </body>
+</html>
